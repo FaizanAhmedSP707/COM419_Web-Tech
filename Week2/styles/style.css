@@ -1,0 +1,14 @@
+body {
+    background: lightskyblue;
+}
+
+#image_pos_tracker {
+    text-align: center;
+    border-width: 5px;
+}
+
+#main_heading {
+    font-size: 40px;
+    text-align: center;
+    background: lime;
+}
