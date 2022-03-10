@@ -71,8 +71,14 @@ nav ul li{
     left: 0;
 }
 
-#BtnCookieeBanner{
+/*#BtnCookieBanner{
     position: absolute;
     top: 0;
     right: 0;
+}
+--> This is the CSS part of the annoying cookie banner.
+*/
+
+#queryUserQn1{
+    
 }
