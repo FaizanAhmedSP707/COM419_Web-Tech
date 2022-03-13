@@ -31,6 +31,12 @@ nav ul li{
 #Title{
     text-align: center;
     margin-top: 80px;
+    margin-bottom: 90px;
+}
+
+#intro_p{
+    text-align: center;
+    font-size: 3vh;
 }
 
 #question_1{
@@ -39,18 +45,23 @@ nav ul li{
 
 #question_2{
     display: none;
+    text-align: center;
 }
 
 #question_3{
     display: none;
+    text-align: center;
 }
 
 #secret_para{
     text-align: center;
     display: none;
+    font-size: 3.25vh;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
 
-#Qn1_first_p{
+.Qn_first_p{
     font-size: 3vh;
     text-align: center;
 }
@@ -61,4 +72,23 @@ nav ul li{
 
 #qn_1-2_ansBtn{
     font-size: 2.5vh;
+    margin-bottom: 15px;
+}
+
+#qn_2-1_ansBtn{
+    font-size: 2.5vh;
+}
+
+#qn_2-2_ansBtn{
+    font-size: 2.5vh;
+    margin-bottom: 15px;
+}
+
+#qn_3-1_ansBtn{
+    font-size: 2.5vh;
+}
+
+#qn_3-2_ansBtn{
+    font-size: 2.5vh;
+    margin-bottom: 15px;
 }
