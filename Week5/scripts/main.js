@@ -22,11 +22,11 @@ document.getElementById("queryUserQn").style.display = "block";
 
 document.getElementById("firstRightBtn").addEventListener("click", e=>{
     document.getElementById("queryUserQn1").style.display = "none";
-})
+});
 
 document.getElementById("firstLeftBtn").addEventListener("click", e=>{
     document.getElementById("firstLeftBtn").style.display = "none";
-    document.getElementById("firstRightBtn").innerText = "Yay!"
+    document.getElementById("firstRightBtn").innerText = "Yay!";
     document.getElementById("firstheading").innerHTML = "First Lesson - Don't admit that";
     document.getElementById("alterpara1").innerHTML = "But you did! So as a reward, your third year will now feature 30% extra dementor!";
-})
+});
