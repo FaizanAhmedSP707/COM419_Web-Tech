@@ -26,38 +26,67 @@ document.getElementById("contact_form").addEventListener("submit", e=>{
     //This a regular expression below!
     let Validregex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+    //booleans below
+    let name_chk = true;
+    let email_chk = true;
+    let scare_chk = true;
+    let user_qchk = true;
+
 
     if (name.length == 0){
-        //alert("Please enter a name!");
+
+        //alert("Please enter a name!");  <-- earlier part of week 6's tasks
+        
         document.getElementById("form_error_genp").innerHTML += "Please enter a name!<br>"
         document.forms["contact_form"]["Name"].style.backgroundColor = "red";
-        e.preventDefault();
+        name_chk = false;
         // In the event of invalid data, you can stop a form from submitting by using e.preventDefault()
+    }
     
-        if (scare_rank_u < 1 || scare_rank_u > 10){
+    if (scare_rank_u < 1 || scare_rank_u > 10){
         
         // The double pipe characters above perform a logical OR operation!
         
-        //alert("Please enter a number between 1 and 10 (Inclusive)");
+        //alert("Please enter a number between 1 and 10 (Inclusive)");  <-- earlier part of week 6's tasks
+
+        scare_chk = false;
+        document.forms["contact_form"]["U_scare_rank"].style.backgroundColor = "red";
         document.getElementById("form_error_genp").innerHTML += "Please enter a number between 1 and 10 (Inclusive)<br>";
-        e.preventDefault();
-    
-        } else if (user_pquery == "") {
-        
-        alert("Please enter your query!");
-        document.getElementById("form_error_genp").innerHTML += "Please enter your query!";
-        e.preventDefault();
-    
-        } else if (user_email.match(Validregex)) {
-        document.forms["contatc_form"]["email"].style.backgroundColor = "green";
-        //alert("Valid email address!");
-        } else{
-        alert("Please enter a proper email address!");
-        e.preventDefault();
-        };
+        //e.preventDefault();
     
     }
+        
+    if (user_pquery == "") {
+        
+        //alert("Please enter your query!");  <-- earlier part of week 6's tasks
+        
+        user_qchk = false;
+        document.forms["contact_form"]["User_query"].style.backgroundColor = "red";
+        document.getElementById("form_error_genp").innerHTML += "Please enter your query!";
+        //e.preventDefault();
+    
+    };
+    
+    if (user_email.match(Validregex)) {
 
+        //alert("Valid email address!");
 
+        document.forms["contact_form"]["email"].style.backgroundColor = "green";
+
+        } else{
+        
+        //alert("Please enter a proper email address!");  <-- earlier part of week 6's tasks
+        document.getElementById("form_error_genp").innerHTML += "Please enter a proper email address!"
+        //e.preventDefault();
+    };
+    
+    if (name_chk == false &&
+        email_chk == false &&
+        scare_chk == false &&
+        user_qchk == false
+        ) {
+            alert("Please fill the form again using the tips given below");
+            e.preventDefault();
+    };
 
 });
