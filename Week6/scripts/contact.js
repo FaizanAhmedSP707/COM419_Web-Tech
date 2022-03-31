@@ -37,8 +37,8 @@ document.getElementById("contact_form").addEventListener("submit", e=>{
 
         //alert("Please enter a name!");  <-- earlier part of week 6's tasks
         
-        document.getElementById("form_error_genp").innerHTML += "Please enter a name!<br>"
         document.forms["contact_form"]["Name"].style.backgroundColor = "red";
+        document.getElementById("form_error_genp").innerHTML += "Please enter a name!<br>"
         name_chk = false;
         // In the event of invalid data, you can stop a form from submitting by using e.preventDefault()
     }
@@ -51,18 +51,18 @@ document.getElementById("contact_form").addEventListener("submit", e=>{
 
         scare_chk = false;
         document.forms["contact_form"]["U_scare_rank"].style.backgroundColor = "red";
-        document.getElementById("form_error_genp").innerHTML += "Please enter a number between 1 and 10 (Inclusive)<br>";
+        document.getElementById("form_error_genp").innerHTML += "Please enter a number between 1 and 10 (Inclusive) !<br>";
         //e.preventDefault();
     
     }
         
-    if (user_pquery == "") {
+    if (user_pquery.trim() == "") {
         
         //alert("Please enter your query!");  <-- earlier part of week 6's tasks
         
         user_qchk = false;
+        document.getElementById("form_error_genp").innerHTML += "Please enter your query!<br>";
         document.forms["contact_form"]["User_query"].style.backgroundColor = "red";
-        document.getElementById("form_error_genp").innerHTML += "Please enter your query!";
         //e.preventDefault();
     
     };
@@ -76,8 +76,9 @@ document.getElementById("contact_form").addEventListener("submit", e=>{
         } else{
         
         //alert("Please enter a proper email address!");  <-- earlier part of week 6's tasks
-        document.getElementById("form_error_genp").innerHTML += "Please enter a proper email address!"
-        //e.preventDefault();
+        document.forms["contact_form"]["email"].style.backgroundColor = "red";
+        document.getElementById("form_error_genp").innerHTML += "Please enter a proper email address!";
+        e.preventDefault();
     };
     
     if (name_chk == false &&
@@ -88,5 +89,4 @@ document.getElementById("contact_form").addEventListener("submit", e=>{
             alert("Please fill the form again using the tips given below");
             e.preventDefault();
     };
-
 });
