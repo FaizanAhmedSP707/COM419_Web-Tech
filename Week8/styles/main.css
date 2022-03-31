@@ -1,0 +1,17 @@
+.bar{
+    width: 100px;
+    height: 20px;
+    background: red;
+    position: relative;
+    margin: 5px 0;
+}
+
+.health{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: green;
+    transition: width 0.5s linear;
+}
