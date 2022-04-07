@@ -1,0 +1,70 @@
+<<--- Notes for Week 9 --->>
+
+/*
+Need to first import the express library, create a const variable called express
+then do = and then type require('express')
+then create an express object using similar way called 'app'
+(this will be used a lot )
+'/' refers to your home page and the rest of the pages get appended to the url after the forward slash
+'req' holds all sorts of info about the request being received
+'res' is what is actually sent back to the browser/client
+following on from the users example, we are passing in a username to that 
+page and you need to precede it with a colon after the / from 'users/'
+also the variable will be stored in the request part (req.params)
+*/
+
+/* Add a listener for port 5000, then give it an optional arrow function with no parameters 
+   that will do something when the server has started. Not gonna do much as there are no routes to use
+   NOTE: To stop the server, press Ctrl+C */
+
+/*
+EJS stands for embedded JavaScript and it is a templating engine that enables us to
+render HTML files or send forward HTML files to the user.
+Template engines usually have a special folder setup for where templated code goes.
+EJS requires a folder called views, additionally you need to tell the server (express in this case)
+that you are using what's called a viewer engine.
+Upon using res.render, it knows that it is going to send back a template or it's going to get from that template
+and all you need to do is to pass in which template.
+Now we've told Express we're using ejs so it already knows that it is going to be looking in the views folder
+for this. Now just pass in the .ejs file holding your template.
+*/
+
+You also need to hold a folder to hold static stuff such as images. Normally, naming conventions for this is
+that is either called static or public. After doing this, you need to tell Node where your
+static/public folder is when doing this.
+
+app.use(express.static('public')) --> this line is used to resolve any of the issues
+related to styling the webpage.
+
+(from lecture vid)
+Right. So another little bit of extra information now, so I will be using this a lot more next week, but these are template files 
+so you can actually inject data into them, varying data that can vary. So let's say so here I've got a title for example. So let's say I 
+want this title, but I want to pass in the title dynamically into this template. 
+So instead of hard coding a title in, I'm going to create a placeholder for the title.
+
+In EJS, the way to do that you have to do this:
+   <%= %>
+If you do that, the server will indicate it as server-side code
+[The = after the % sign outputs a value]
+
+(from vid): It will see this and it will run any any code you run here. Now what I'm specifically doing here is I'm outputting a value a 
+specific value so to do to say I'm just going to output a value to the screen you put a little equals sign there.
+
+
+Where does the title come from? The answer is that it is passed in using the render function.
+In the render function, after the name of the page, you create a JavaScript (looks similar to a Python dictionary)
+you have the name of the variable, here I used title, then you put in what name of the page you want to be displayed when
+you open it(so {title: "Welcome to Hogwarts!"}). Then reference the variable in the actual ejs file
+You can even have multiple of those, just separate them using a comma.
+
+A benefit of using templates is that, when the site's pages all have some similarity between them 
+(in my case the 3 pages related to the Harry Potter webpage all had a nav element at the top of the webpage),
+it is better to create what is known as a particle, what we do is we grab the navigation bar and place it in it's 
+own file. And then, we're going to inject the nav bar back in using EJS.
+
+NOTE: ---> Now when you want to generate or when you want to render raw HTML, the symbol for interpreting
+raw HTML is '-' (As in <%- &>). Then after the dash write 'include('particles/nav.ejs')'
+FULL is <%- include('particles/nav.ejs'). And now, wherever in the 3 pages that appears, the navigation bar will appear.
+
+The biggest advantage of this is that, if I make a change to the navigation bar in one place, the changes will be
+reflected across the whole website where the nav bar is used.

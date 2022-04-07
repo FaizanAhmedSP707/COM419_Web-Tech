@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= contact_us %> </title>
+    <link rel="stylesheet" href="styles_ctn/contact.css">
+</head>
+<body>
+
+    <!-- First up on the page, is the banner on the page-->
+    <header>
+        <h1>Welcome<br>to Hogwarts</h1>
+    </header>
+
+    <!-- Nav bar next, underneath the banner (isn't functional as there's no need)-->
+    <!-- <nav> tag is a semantic element, that tells you whether navigation facilities are available on the site-->
+    <%- include('particles/nav.ejs') %>
+
+    <div id="Title">
+        <h2>Contact Us</h2>
+    </div>
+
+    <main>
+
+        <form id="contact_form">
+
+            <p id="intro_cxttext">Please use the form below to contact us</p>
+
+
+            <label id="name_input">Name: </label> <br> <input id="txtName" name="Name">
+            <br>
+            <label id="email_input">E-mail</label> <br> <input type="email" id="txt-Email" name="email">
+
+
+            <p id="form_txt_1">What package is your query about?</p>
+
+
+            <input type="radio" required id="standard_opt" name="pkg_opt" value="Standard">
+            <label for="standard_opt">Standard</label> <br>
+            <input type="radio" required id="chosen_one_opt" name="pkg_opt" value="The Chosen One Package">
+            <label for="chosen_one_opt">The Chosen One Package</label> <br>
+            
+
+            <p id="form_txt_2">
+                We may respond via owl, on a scale of 1-10, how scared are you of<br>
+                owls?<br>
+                (10 being the most scared)
+            </p>
+
+
+            <input type="number" id="scare_rank" name="U_scare_rank">
+            <br>
+            <br>
+
+
+            <label for="personal_query" id="form_txt_3">Please enter your query:</label> <br>
+            <textarea id="personal_query" name="User_query" rows="6" cols="50">
+            </textarea>
+            <br>
+            <br>
+            <button id="btnSubmitForm">Submit Form</button>
+            <!--
+                > 'for' attribute: Does something, don't know yet
+                > When a button is clicked inside a form that submits data, a '?' appears next to the URL of the page
+                  This is known as a query selector
+                > The <input> tag creates a text-box in which data can be entered
+                > It's common to add a 'name' attribute to form inputs (such as textboxes); this will come in handy
+                  when looking at server side code
+                > When submitting a form, the webpage will take the value inscribed in the name attribute
+                  (i.e. the thing in the speech marks) and prefix it to the data submitted by the user after the ? mark
+                  in the URL like so: Name=Dario&email=dsv.123@yahoo.com .This is used by servers to identify what data has
+                  been sent to it and what type of data it is.
+                > Putting 'type' inside a <input> tag will restrict the input data to the type specified
+                > radio buttons is where you select a single option from several options shown (not a drop down list)
+                  (A circle next to the option gets highlighted with usually a blue/black colour when the circle is
+                  clicked)
+                > The two radio buttons are given the same name, this is important if you want them to work together.
+                  Otherwise, they will act independently of each other and you can select both values at once.
+                > The radio buttons have a "value." This is what will be sent to any script that processes the data
+                  sent by the form.
+                > The 'required' attribute makes the current field display a message to the user indicating that
+                  they need to fill in that field, or click on one of the options, etc. (HTML5 validation)
+            -->
+        </form>
+
+        <p id="form_error_genp">
+            
+        </p>
+        <!--
+            The above gets populated with a pseudo error message telling the user what needs to be
+            input to the form.
+        -->
+
+    </main>
+    
+    
+    <div id="cookieBanner">
+        <p>A warning/notice about an annoying cookie banner!</p>
+        <button id="BtnCookieBanner">X</button>
+    </div>
+
+    <script src="scripts_ctn/contact.js"></script>
+
+</body>
+</html>

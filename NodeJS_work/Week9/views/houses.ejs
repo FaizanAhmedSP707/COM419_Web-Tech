@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= houses %> </title>
+    <link rel="stylesheet" href="styles/houses.css">
+</head>
+
+<body>
+
+    <!-- First up on the page, is the banner on the page-->
+    <header>
+        <h1>Welcome<br>to Hogwarts</h1>
+    </header>
+
+    <!-- Nav bar next, underneath the banner (isn't functional as there's no need)-->
+    <!-- <nav> tag is a semantic element, that tells you whether navigation facilities are available on the site-->
+    <%- include('particles/nav.ejs') %>
+
+
+    <main>
+
+        <div id="Title">
+            <h3>Our Houses</h3>
+        </div>
+
+        <div id="intro_p">
+            <p>Answer the questions below to see how your answer matches our houses</p>
+        </div>
+
+        <div id="question_1">
+            
+            <p class="Qn_first_p">You hear of a MASSIVE spider! It's the size of a car! What do you do?</p>
+
+            <button id="qn_1-1_ansBtn">Ignore all my fears and walk right into its' den for a chat</button>
+            <br>
+            <br>
+            <button id="qn_1-2_ansBtn">I probably won't look for that den</button>
+        
+        </div>
+
+        <div id="question_2">
+
+            <p class="Qn_first_p">How many Harry Potters does it take to screw in a light bulb?</p>
+
+            <button id="qn_2-1_ansBtn">One, he just holds it and the WHOLE world revolves around him</button>
+            <br>
+            <br>
+            <button id="qn_2-2_ansBtn">That other answer in neither nice or accurate</button>
+        
+        </div>
+
+
+        <div id="question_3">
+
+            <p class="Qn_first_p">A supervillain has told everyone that they will be spared if they join the evil army:</p>
+
+            <button id="qn_3-1_ansBtn">I will weigh up the pros and cons of each possibility</button>
+            <br>
+            <br>
+            <button id="qn_3-2_ansBtn">I'm unlikely to join an evil army</button>
+        
+        </div>
+
+
+    </main>
+
+    <div id="secret_para">
+        <h3></h3>
+    </div>
+
+    <script src="scripts/houses.js"></script>
+
+</body>
+</html>
