@@ -1,0 +1,23 @@
+{
+  "name": "com419_web-tech",
+  "version": "1.0.0",
+  "description": "This repository houses my work for COM419",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaizanAhmedSP707/COM419_Web-Tech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "bugs": {
+    "url": "https://github.com/FaizanAhmedSP707/COM419_Web-Tech/issues"
+  },
+  "homepage": "https://github.com/FaizanAhmedSP707/COM419_Web-Tech#readme"
+}
