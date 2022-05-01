@@ -52,7 +52,7 @@ specific value so to do to say I'm just going to output a value to the screen yo
 
 
 Where does the title come from? The answer is that it is passed in using the render function.
-In the render function, after the name of the page, you create a JavaScript (looks similar to a Python dictionary)
+In the render function, after the name of the page, you create a JavaScript dictionary(looks similar to a Python dictionary)
 you have the name of the variable, here I used title, then you put in what name of the page you want to be displayed when
 you open it(so {title: "Welcome to Hogwarts!"}). Then reference the variable in the actual ejs file
 You can even have multiple of those, just separate them using a comma.
