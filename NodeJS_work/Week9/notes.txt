@@ -68,3 +68,56 @@ FULL is <%- include('particles/nav.ejs'). And now, wherever in the 3 pages that 
 
 The biggest advantage of this is that, if I make a change to the navigation bar in one place, the changes will be
 reflected across the whole website where the nav bar is used.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+XAMPP --> MySQL stuff 
+
+Upon the completion of forms, the data is usually sent using POST requests (this data needs to be handled) to a database. In order
+to implement the POST request stuff when you need to put data into a database, you need two things in EJS:
+
+1) app.use(express.json()) 
+--> This is a middleware function that parses any incoming data into JSON format so that this data can be handled properly.
+
+2. app.use(express.urlencoded({extended}))
+-->'urlencoded' is also a middle-ware function in Express that parses incoming requests with urlencoded payloads and is based
+      body-parser.
+   What comes inside of urlencoded is something that returns middleware which only parses ulencoded bodies and only looks at requests
+      where the Content-Type header matches the type option. This is something to do with the way that it handles JavaScript objects
+      when they come in, which is in the form of a dictionary.
+      The extended option allows to choose between parsing the URL-encoded data with the querystring library when (extended: false)
+      or the qs library when (extended: true) 
+
+You also need to describe a method on a form which is something like : <form method="post></form>. If you don't include the
+'method: post' part, by default the form will send a get request. The other thing you need to do after putting in 'method: post',
+is to include something called 'action', which describes where do you want the form to send information to.
+
+What is described in the 'name' part of the input tag is what we will pick up on the other side. So for example: <input name="Name">,
+the string in the double quotes is what will be picked up.
+
+Also need to have the mysql package installed, so just run npm install mysql in the terminal and it will work out what to download.
+Then you need to import in the library using: const mysql = require('mysql'). After that you need to make a connection to the database,
+so just do:
+db = mysql.createConnection({
+   host: "localhost",
+   user: "root",
+   password: "",
+   database: "<your_database_name>"
+});
+
+host: where is the database stored,
+user: leave default at 'root', don't create your own for the assessment, makes things difficult for the marker,
+password: just leave blank, ideally you should set your own username and password and set permissions appropriately,
+         don't do it for the assessment as it makes marking difficult.
+database: give the name of the database stored in phpMyAdmin.
+
+
+Finally, you have to make the actual connection using the variable you just used above. The connection object here is quite simple,
+just simply give it an arrow function with one parameter usually called 'err'. So if there is any error in making the connection, it will
+be acknowledged in the 'err' variable there.
+
+db.connect(err=>{
+
+})
+
+Now you tell it what you want to do when it's connected. If there is an error, you don't want it to continue becuae your application will
+be quite useless without a database.
